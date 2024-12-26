@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ChatGPT</title>
+</head>
+<body class="first_main">
+    <div class="scrolldesable">
+        <h1>Prompt History</h1>
+        <table border="1">
+            <% data.forEach((item, index) => { %>
+                <% if (item.Prompt) { %>
+                    <tr>
+                        <td>Question:</td>
+                        <td><%= item.Prompt %></td>
+                    </tr>
+                    <tr>
+                        <td>Answer:</td>
+                        <td colspan="2"><%= item.Answer %></td>
+                    </tr>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3">No Prompt Data Available</td>
+                    </tr>
+                <% } %>
+            <% }); %>
+        </table>
+    </div>
+</body>
+</html>
